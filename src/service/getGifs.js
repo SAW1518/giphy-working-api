@@ -1,8 +1,7 @@
-
 const apiKey = 'TifQppIspCQWW0J41AANoytOYVC5ZJAj'
 
-export default async function getGifs ({ topic = 'cats' } = {}) {
-  const apiURl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${topic}&limit=25&offset=21&rating=g&lang=en`
+export default async function getGifs ({ keyword = 'homes' } = {}) {
+  const apiURl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=25&offset=21&rating=g&lang=en`
   return await fetch(apiURl).then(r => r.json()).then(response => {
     const { data } = response
     if (Array.isArray(data)) {
